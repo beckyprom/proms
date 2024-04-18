@@ -7,30 +7,30 @@
     <link rel="stylesheet" href="style.css">
     <style>
         body {
-            background-image: url('https://www.unicef.org/kenya/sites/unicef.org.kenya/files/styles/press_release_feature/public/WhatsApp%20Image%202020-11-19%20at%2010.26.26.jpeg.webp?itok=VbBZUeYS');
-            background-size: cover;
-            background-position: center;
-            font-family: Arial, sans-serif;
+            background-image: url('https://www.unicef.org/kenya/sites/unicef.org.kenya/files/styles/press_release_feature/public/WhatsApp%20Image%202020-11-19%20at%2010.26.26.jpeg.webp?itok=VbBZUeYS'); /* Replace 'background.jpg' with the path to your image */
+            background-size: cover; /* Cover the entire viewport */
+            background-position: center; /* Center the image */
+            font-family: Arial, sans-serif; /* Optional: Set a fallback font */
         }
 
         .container {
             padding: 20px;
-            background-color: rgba(255, 255, 255, 0.8);
+            background-color: rgba(255, 255, 255, 0.8); /* Add a semi-transparent white background to make content readable */
             border-radius: 10px;
             margin: auto;
             width: 80%;
-            max-width: 600px;
+            max-width: 600px; /* Limit maximum width of the container */
         }
 
         .unicef-title {
             color: green;
             font-size: 24px;
             margin-bottom: 20px;
-            text-align: center;
+            text-align: center; /* Center the title */
         }
 
         h2 {
-            text-align: center;
+            text-align: center; /* Center the welcome message */
         }
 
         .form-group {
@@ -59,7 +59,7 @@
             border-radius: 5px;
             cursor: pointer;
             display: block;
-            margin: 0 auto;
+            margin: 0 auto; /* Center the button */
         }
 
         button:hover {
@@ -98,21 +98,16 @@
                     <option value="other">Other</option>
                 </select>
             </div>
-            <button type="button" onclick="submitForm()">Continue</button>
+            <button type="button" onclick="redirectToNextPage()">Continue</button>
         </form>
         <!-- Space for another heading -->
         <h2>Thank you for your participation!</h2>
     </div>
 
     <script>
-        function submitForm() {
-            var fullName = document.getElementById("fullName").value;
-            var phoneNumber = document.getElementById("phoneNumber").value;
-            var country = document.getElementById("country").value;
-            var gender = document.getElementById("gender").value;
-
-            // Redirect to details page with user's details as query parameters
-            window.location.href = "https://sums-ten.vercel.app/" + encodeURIComponent(fullName) + "&phoneNumber=" + encodeURIComponent(phoneNumber) + "&country=" + encodeURIComponent(country) + "&gender=" + encodeURIComponent(gender);
+        function redirectToNextPage() {
+            // Redirect to the next page
+            window.location.href = "https://sums-pkoechs-projects.vercel.app/"; // Replace "next_page.html" with the URL of your next page
         }
     </script>
 </body>
