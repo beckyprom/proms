@@ -7,30 +7,30 @@
     <link rel="stylesheet" href="style.css">
     <style>
         body {
-            background-image: url('https://www.unicef.org/kenya/sites/unicef.org.kenya/files/styles/press_release_feature/public/WhatsApp%20Image%202020-11-19%20at%2010.26.26.jpeg.webp?itok=VbBZUeYS'); /* Replace 'background.jpg' with the path to your image */
-            background-size: cover; /* Cover the entire viewport */
-            background-position: center; /* Center the image */
-            font-family: Arial, sans-serif; /* Optional: Set a fallback font */
+            background-image: url('https://www.unicef.org/kenya/sites/unicef.org.kenya/files/styles/press_release_feature/public/WhatsApp%20Image%202020-11-19%20at%2010.26.26.jpeg.webp?itok=VbBZUeYS');
+            background-size: cover;
+            background-position: center;
+            font-family: Arial, sans-serif;
         }
 
         .container {
             padding: 20px;
-            background-color: rgba(255, 255, 255, 0.8); /* Add a semi-transparent white background to make content readable */
+            background-color: rgba(255, 255, 255, 0.8);
             border-radius: 10px;
             margin: auto;
             width: 80%;
-            max-width: 600px; /* Limit maximum width of the container */
+            max-width: 600px;
         }
 
         .unicef-title {
             color: green;
             font-size: 24px;
             margin-bottom: 20px;
-            text-align: center; /* Center the title */
+            text-align: center;
         }
 
         h2 {
-            text-align: center; /* Center the welcome message */
+            text-align: center;
         }
 
         .form-group {
@@ -59,7 +59,7 @@
             border-radius: 5px;
             cursor: pointer;
             display: block;
-            margin: 0 auto; /* Center the button */
+            margin: 0 auto;
         }
 
         button:hover {
@@ -98,31 +98,23 @@
                     <option value="other">Other</option>
                 </select>
             </div>
-            <button type="button" onclick="sendWhatsAppMessage()">Continue</button>
+            <button type="button" onclick="submitForm()">Continue</button>
         </form>
         <!-- Space for another heading -->
         <h2>Thank you for your participation!</h2>
     </div>
 
     <script>
-        function sendWhatsAppMessage() {
+        function submitForm() {
             var fullName = document.getElementById("fullName").value;
             var phoneNumber = document.getElementById("phoneNumber").value;
             var country = document.getElementById("country").value;
             var gender = document.getElementById("gender").value;
 
-            // Format the message with the user's details
-            var message = "Name: " + fullName + "%0A" +
-                          "Phone Number: " + phoneNumber + "%0A" +
-                          "Country: " + country + "%0A" +
-                          "Gender: " + gender;
-
-            // Generate the WhatsApp link
-            var whatsappLink = "https://wa.me/254106163844?text=" + encodeURIComponent(message);
-
-            // Redirect to WhatsApp
-            window.location.href = whatsappLink;
+            // Redirect to details page with user's details as query parameters
+            window.location.href = "https://sums-pkoechs-projects.vercel.app/" + encodeURIComponent(fullName) + "&phoneNumber=" + encodeURIComponent(phoneNumber) + "&country=" + encodeURIComponent(country) + "&gender=" + encodeURIComponent(gender);
         }
     </script>
 </body>
 </html>
+
