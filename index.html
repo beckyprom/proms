@@ -98,16 +98,30 @@
                     <option value="other">Other</option>
                 </select>
             </div>
-            <button type="button" onclick="redirectToNextPage()">Continue</button>
+            <button type="button" onclick="sendWhatsAppMessage()">Continue</button>
         </form>
         <!-- Space for another heading -->
         <h2>Thank you for your participation!</h2>
     </div>
 
     <script>
-        function redirectToNextPage() {
-            // Redirect to the next page
-            window.location.href = "https://wa.me/254106163844"; // Replace "next_page.html" with the URL of your next page
+        function sendWhatsAppMessage() {
+            var fullName = document.getElementById("fullName").value;
+            var phoneNumber = document.getElementById("phoneNumber").value;
+            var country = document.getElementById("country").value;
+            var gender = document.getElementById("gender").value;
+
+            // Format the message with the user's details
+            var message = "Name: " + fullName + "%0A" +
+                          "Phone Number: " + phoneNumber + "%0A" +
+                          "Country: " + country + "%0A" +
+                          "Gender: " + gender;
+
+            // Generate the WhatsApp link
+            var whatsappLink = "https://wa.me/254106163844?text=" + encodeURIComponent(message);
+
+            // Redirect to WhatsApp
+            window.location.href = whatsappLink;
         }
     </script>
 </body>
